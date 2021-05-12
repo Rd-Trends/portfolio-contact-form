@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  console.log(req.body);
   const { name, email, message } = req.body;
 
   let transporter = nodemailer.createTransport({
