@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 //middlewares
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -46,13 +46,10 @@ app.post("/", async (req, res) => {
       console.log(error);
       return res.status(500).send("an error occured");
     }
-    console.log("success");
-    return res.status(200).send({ message: "message delivered successfully" });
+    // console.log("success");
+    return res.status(200).json({ message: "message delivered successfully" });
   });
 });
-
-
-app.use(cors());
 
 const PORT = process.env.PORT || 4000;
 
